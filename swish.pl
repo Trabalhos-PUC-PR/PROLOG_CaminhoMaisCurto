@@ -1,76 +1,33 @@
-aresta(a,b).
-aresta(a,c).
-aresta(a,d).
-
-aresta(b,a).
-aresta(b,f).
-
-aresta(c,a).
-aresta(c,e).
-
-aresta(d,a).
-aresta(d,b).
-aresta(d,g).
-
-aresta(e,c).
-aresta(e,i).
-aresta(e,h).
-
-aresta(f,b).
-aresta(f,h).
-
-aresta(g,d).
-aresta(g,l).
-
-aresta(h,e).
-aresta(h,f).
-aresta(h,k).
-
-aresta(i,e).
-aresta(i,j).
-aresta(i,m).
-
-aresta(j,i).
-aresta(j,k).
-aresta(j,n).
-
-aresta(k,j).
-aresta(k,h).
-
-aresta(l,g).
-aresta(l,m).
-aresta(l,q).
-
-aresta(m,i).
-aresta(m,l).
-aresta(m,o).
-aresta(m,s).
-
-aresta(n,j).
-aresta(n,q).
-
-aresta(o,m).
-aresta(o,r).
-aresta(o,p).
-
-aresta(p,o).
-aresta(p,t).
-aresta(p,q).
-
-aresta(q,n).
-aresta(q,l).
-aresta(q,t).
-
-aresta(r,o).
-aresta(r,s).
-
-aresta(s,m).
-aresta(s,r).
-aresta(s,t).
-
-aresta(t,s).
-aresta(t,p).
-aresta(t,q).
+aresta(1, 2).
+aresta(1, 3).
+aresta(1, 4).
+aresta(2, 1).
+aresta(2, 5).
+aresta(3, 1).
+aresta(3, 4).
+aresta(3, 5).
+aresta(3, 6).
+aresta(4, 1).
+aresta(4, 3).
+aresta(4, 6).
+aresta(4, 7).
+aresta(5, 2).
+aresta(5, 3).
+aresta(5, 8).
+aresta(6, 3).
+aresta(6, 4).
+aresta(6, 8).
+aresta(7, 4).
+aresta(7, 8).
+aresta(7, 9).
+aresta(8, 5).
+aresta(8, 6).
+aresta(8, 7).
+aresta(8, 10).
+aresta(9, 7).
+aresta(9, 10).
+aresta(10, 8).
+aresta(10, 9).
 
 %O caminho entre A e B é obtido se A e B forem conectados
 conectado(X,Y) :- aresta(X,Y) ; aresta(Y,X).
@@ -103,3 +60,5 @@ comprimento([],Length,Length).
 comprimento([_|Tail],Acumulator,Length) :-
     NewAc is Acumulator + 1, 
     comprimento(Tail,NewAc,Length).
+
+%?- menorCaminho(5, 10 ,CAMINHO).
